@@ -6,19 +6,43 @@ let tag = "pm2";
 let facility = "syslog";
 let stripColor = false;
 
-if (process.env["pm2-syslog-logger"]) {
-  let config = JSON.parse(process.env["pm2-syslog-logger"]);
+let ain2_config = {
+  hostname: "localhost",
+  port: 514,
+  transport: "UDP",
+  path: "/dev/log",
+  tag: "pm2",
+  facility: "user",
+};
+if (process.env["pm2-syslog3"]) {
+  let config = JSON.parse(process.env["pm2-syslog3"]);
+
+  // logger options
   if (config.tag) {
-    tag = config.tag;
+    ain2_config["tag"] = config.tag;
   }
   if (config.facility) {
-    facility = config.facility;
+    ain2_config["facility"] = config.facility;
   }
+  if (config.hostname) {
+    ain2_config["hostname"] = config.hostname;
+  }
+  if (config.port) {
+    ain2_config["port"] = config.port;
+  }
+  if (config.transport) {
+    ain2_config["transport"] = config.transport;
+  }
+  if (config.path) {
+    ain2_config["path"] = config.path;
+  }
+
+  // feature options
   if (config.stripColor) {
     stripColor = config.stripColor;
   }
 }
-const logger = new ain2({ tag: tag, facility: facility });
+const logger = new ain2(ain2_config);
 
 pm2.launchBus(function (err, bus) {
   const cleanLine = function (str) {
