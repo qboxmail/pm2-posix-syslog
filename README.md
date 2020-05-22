@@ -1,22 +1,6 @@
 # pm2-syslog3
 
-Redirect all logs of PM2 + Apps managed into `/var/log/syslog` with some nice features
-
-## Configure OS
-
-Edit `/etc/rsyslog.conf` and uncomment:
-
-```
-# provides UDP syslog reception
-module(load="imudp")
-input(type="imudp" port="514")
-```
-
-Restart rsyslog:
-
-```
-$ sudo service rsyslog restart
-```
+Redirect all logs of PM2 apps to syslog with some nice features using POSIX logger
 
 ## Install module
 
@@ -31,21 +15,14 @@ $ pm2 uninstall matteomattei/pm2-syslog3
 ## Configuration
 
 ```
-# ENVIRONMENT HOSTNAME:PORT
-$ pm2 set pm2-syslog3:hostname localhost  # 'localhost' is the default.
-$ pm2 set pm2-syslog3:port 514  # 514 is the default.
-$ pm2 set pm2-syslog3:transport UDP  # 'UDP' is the default
-# OR UNIX FILESYSTEM SOCKET
-$ pm2 set pm2-syslog3:path /dev/log  # '/dev/log' is the default
-
 # Optionally change the facility
-$ pm2 set pm2-syslog3:facility syslog  # 'user' is the default
+$ pm2 set pm2-syslog3:facility syslog  # 'syslog' is the default
 
-# Optionally change the tag name
-$ pm2 set pm2-syslog3:tag mytag  # 'pm2' is the default
+# Optionally change the application name
+$ pm2 set pm2-syslog3:app_name my_app  # 'pm2' is the default
 
 # Remove VT100 color chars
-$ pm2 set pm2-syslog3:stripColor 1  # '0' is the default
+$ pm2 set pm2-syslog3:strip_color 1  # '0' is the default
 ```
 
 ## Facility
