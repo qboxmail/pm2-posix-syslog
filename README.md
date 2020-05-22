@@ -21,8 +21,11 @@ $ pm2 set pm2-syslog3:facility syslog  # 'syslog' is the default
 # Optionally change the application name
 $ pm2 set pm2-syslog3:app_name my_app  # 'pm2' is the default
 
-# Remove VT100 color chars
+# Optionally remove VT100 color chars
 $ pm2 set pm2-syslog3:strip_color 1  # '0' is the default
+
+# Optionally remove pm2 log_date_format
+$ pm2 set pm2-syslog3:strip_log_date 1  # '0' is the default
 ```
 
 ## Facility
