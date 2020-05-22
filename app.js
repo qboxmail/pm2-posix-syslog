@@ -39,7 +39,7 @@ if (process.env["pm2-syslog3"]) {
 
   // feature options
   if (config.stripColor) {
-    stripColor = config.stripColor;
+    stripColor = config.stripColor === 1 ? true : false;
   }
 }
 const logger = new ain2(ain2_config);
