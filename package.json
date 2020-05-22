@@ -1,0 +1,22 @@
+{
+  "name": "pm2-syslog3",
+  "version": "1.0.0",
+  "description": "Redirect PM2/apps logs to syslog with some nice features",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ain2": "^3.0.0",
+    "pm2": "latest",
+    "strip-ansi": "^6.0.0"
+  },
+  "apps": [
+    {
+      "name": "pm2-syslog3",
+      "script": "app.js"
+    }
+  ],
+  "author": "Matteo Mattei",
+  "license": "MIT"
+}
