@@ -6,10 +6,10 @@ Redirect all logs of PM2 apps to syslog with some nice features using POSIX logg
 
 ```
 # Install
-$ pm2 install matteomattei/pm2-posix-syslog
+$ pm2 install pm2-posix-syslog
 
 # Uninstall
-$ pm2 uninstall matteomattei/pm2-posix-syslog
+$ pm2 uninstall pm2-posix-syslog
 ```
 
 ## Configuration
