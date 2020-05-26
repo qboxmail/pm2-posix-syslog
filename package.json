@@ -18,5 +18,19 @@
     }
   ],
   "author": "Matteo Mattei",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/matteomattei/pm2-posix-syslog/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matteomattei/pm2-posix-syslog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matteomattei/pm2-posix-syslog/issues"
+  },
+  "keywords": [
+    "posix",
+    "syslog",
+    "pm2",
+    "logger"
+  ]
 }
