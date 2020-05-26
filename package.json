@@ -1,5 +1,5 @@
 {
-  "name": "pm2-syslog3",
+  "name": "pm2-posix-syslog",
   "version": "1.0.0",
   "description": "Redirect PM2/apps logs to syslog with some nice features",
   "main": "app.js",
@@ -13,7 +13,7 @@
   },
   "apps": [
     {
-      "name": "pm2-syslog3",
+      "name": "pm2-posix-syslog",
       "script": "app.js"
     }
   ],

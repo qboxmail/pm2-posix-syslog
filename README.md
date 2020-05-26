@@ -1,4 +1,4 @@
-# pm2-syslog3
+# pm2-posix-syslog
 
 Redirect all logs of PM2 apps to syslog with some nice features using POSIX logger
 
@@ -6,26 +6,26 @@ Redirect all logs of PM2 apps to syslog with some nice features using POSIX logg
 
 ```
 # Install
-$ pm2 install matteomattei/pm2-syslog3
+$ pm2 install matteomattei/pm2-posix-syslog
 
 # Uninstall
-$ pm2 uninstall matteomattei/pm2-syslog3
+$ pm2 uninstall matteomattei/pm2-posix-syslog
 ```
 
 ## Configuration
 
 ```
 # Optionally change the facility
-$ pm2 set pm2-syslog3:facility syslog  # 'syslog' is the default
+$ pm2 set pm2-posix-syslog:facility syslog  # 'syslog' is the default
 
 # Optionally change the application name
-$ pm2 set pm2-syslog3:app_name my_app  # 'pm2' is the default
+$ pm2 set pm2-posix-syslog:app_name my_app  # 'pm2' is the default
 
 # Optionally remove VT100 color chars
-$ pm2 set pm2-syslog3:strip_color 1  # '0' is the default
+$ pm2 set pm2-posix-syslog:strip_color 1  # '0' is the default
 
-# Optionally remove pm2 log_date_format
-$ pm2 set pm2-syslog3:strip_log_date 1  # '0' is the default
+# Optionally remove pm2 log_date_format (it must start with YYYY-MM-DD)
+$ pm2 set pm2-posix-syslog:strip_log_date 1  # '0' is the default
 ```
 
 ## Facility
@@ -50,6 +50,15 @@ $ pm2 set pm2-syslog3:strip_log_date 1  # '0' is the default
 21  local5  local use 5
 22  local6  local use 6
 23  local7  local use 7
+```
+
+## Rsyslog
+
+Configure RSYSLOG /etc/rsyslog.d/myapp.conf in this way:
+
+```
+:programname, isequal, "my_app" -/var/log/my_app.log
+:programname, isequal, "my_app" stop
 ```
 
 # License
