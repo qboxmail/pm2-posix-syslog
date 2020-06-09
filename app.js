@@ -7,8 +7,8 @@ let facility = "syslog";
 let strip_color = false;
 let strip_log_date = false;
 
-if (process.env["pm2-syslog3"]) {
-  let app_config = JSON.parse(process.env["pm2-syslog3"]);
+if (process.env["pm2-posix-syslog"]) {
+  let app_config = JSON.parse(process.env["pm2-posix-syslog"]);
 
   // logger options
   if (app_config.app_name) {
