@@ -1,4 +1,4 @@
-# pm2-posix-syslog
+# qboxmail-pm2-posix-syslog
 
 Redirect all logs of PM2 apps to syslog with some nice features using POSIX logger
 
@@ -6,26 +6,26 @@ Redirect all logs of PM2 apps to syslog with some nice features using POSIX logg
 
 ```
 # Install
-$ pm2 install pm2-posix-syslog
+$ pm2 install qboxmail-pm2-posix-syslog
 
 # Uninstall
-$ pm2 uninstall pm2-posix-syslog
+$ pm2 uninstall qboxmail-pm2-posix-syslog
 ```
 
 ## Configuration
 
 ```
 # Optionally change the facility
-$ pm2 set pm2-posix-syslog:facility syslog  # 'syslog' is the default
+$ pm2 set qboxmail-pm2-posix-syslog:facility syslog  # 'syslog' is the default
 
 # Optionally change the application name
-$ pm2 set pm2-posix-syslog:app_name my_app  # 'pm2' is the default
+$ pm2 set qboxmail-pm2-posix-syslog:app_name my_app  # 'pm2' is the default
 
 # Optionally remove VT100 color chars
-$ pm2 set pm2-posix-syslog:strip_color 1  # '0' is the default
+$ pm2 set qboxmail-pm2-posix-syslog:strip_color 1  # '0' is the default
 
 # Optionally remove pm2 log_date_format (it must start with YYYY-MM-DD)
-$ pm2 set pm2-posix-syslog:strip_log_date 1  # '0' is the default
+$ pm2 set qboxmail-pm2-posix-syslog:strip_log_date 1  # '0' is the default
 ```
 
 ## Facility
